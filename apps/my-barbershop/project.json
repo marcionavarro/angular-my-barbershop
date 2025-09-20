@@ -8,12 +8,16 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/my-barbershop",
         "index": "apps/my-barbershop/src/index.html",
         "browser": "apps/my-barbershop/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/my-barbershop/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -36,7 +40,10 @@
           }
         ],
         "stylePreprocessorOptions": {
-          "includePaths": ["apps/my-barbershop/src/styles", "node_modules"]
+          "includePaths": [
+            "apps/my-barbershop/src/styles",
+            "node_modules"
+          ]
         },
         "scripts": []
       },
@@ -59,7 +66,13 @@
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/my-barbershop/src/environments/environment.ts",
+              "with": "apps/my-barbershop/src/environments/environment.development.ts"
+            }
+          ]
         }
       },
       "defaultConfiguration": "production"
@@ -87,7 +100,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/my-barbershop/jest.config.ts"
       }

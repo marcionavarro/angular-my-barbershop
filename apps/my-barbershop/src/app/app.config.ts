@@ -7,6 +7,7 @@ import { ApplicationConfig, importProvidersFrom, inject, isDevMode, provideAppIn
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
+import { AuthService } from '@domain/auth/services/auth.service';
 import { provideTransloco } from '@jsverse/transloco';
 import { ThemeService } from '@shared/services/theme/theme.service';
 
@@ -34,5 +35,6 @@ export const appConfig: ApplicationConfig = {
       loader: TranslocoHttpLoader,
     }),
     provideAppInitializer(() => inject(ThemeService).loadTheme()),
+    provideAppInitializer(() => inject(AuthService).load()),
   ],
 };
