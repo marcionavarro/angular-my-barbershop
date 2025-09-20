@@ -30,6 +30,8 @@ module.exports = [
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.cjs', '**/*.mjs'],
     // Override or add rules here
-    rules: {},
+    rules: {
+      '@typescript-eslint/no-empty-function': ['error', { allow: ['constructors'] }],
+    },
   },
 ];

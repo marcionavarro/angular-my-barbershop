@@ -3,11 +3,12 @@ import { provideNzI18n, pt_BR } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
 import pt from '@angular/common/locales/pt';
-import { ApplicationConfig, importProvidersFrom, isDevMode, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, inject, isDevMode, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { provideTransloco } from '@jsverse/transloco';
+import { ThemeService } from '@shared/services/theme/theme.service';
 
 import { appRoutes } from './app.routes';
 import { TranslocoHttpLoader } from './transloco-loader';
@@ -22,7 +23,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(FormsModule),
     provideAnimationsAsync(),
     provideHttpClient(),
-    provideHttpClient(),
     provideTransloco({
       config: {
         availableLangs: ['pt-BR', 'en'],
@@ -33,5 +33,6 @@ export const appConfig: ApplicationConfig = {
       },
       loader: TranslocoHttpLoader,
     }),
+    provideAppInitializer(() => inject(ThemeService).loadTheme()),
   ],
 };
