@@ -42,7 +42,7 @@
                 <ng-template #inputSuffixTemplate>
                   @if(field.addOnAfterIcon) {
                   <button type="button" nzButton nzSearch (click)="field.onAddOnAfterClick && field.onAddOnAfterClick(form)">
-                    <i mb-icon [mbType]="field.addOnAfterIcon" nz-typography nzType="secondary"> </i>
+                    <i app-icon [mbType]="field.addOnAfterIcon" nz-typography nzType="secondary"> </i>
                   </button>
                   }
                 </ng-template>
@@ -123,7 +123,7 @@
             </ng-container>
 
             <ng-container *ngIf="field.type.field === eDynamicField.SWITCH">
-              <div class="mb-switch">
+              <div class="app-switch">
                 <div>
                   <span>{{ field.help }}</span>
                   @if(field.help){

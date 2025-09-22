@@ -1,7 +1,7 @@
 import { booleanAttribute, Directive, ElementRef, inject, Input } from '@angular/core';
 
 @Directive({
-  selector: '[mb-icon]',
+  selector: '[app-icon]',
   standalone: true,
   host: {
     class: 'material-icons-outlined',

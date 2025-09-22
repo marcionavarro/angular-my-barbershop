@@ -75,7 +75,7 @@ const DYNAMIC_FORM_MODULES = [
 
 @UntilDestroy()
 @Component({
-  selector: 'mb-dynamic-form',
+  selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
   styleUrl: './dynamic-form.component.scss',
   standalone: true,
@@ -139,8 +139,7 @@ export class DynamicFormComponent implements OnInit {
   tooglePasswordIconVisibility(controlName: string) {
     const control = this.config?.find(c => c.name === controlName);
     if (!control) return;
-
-    control.showPasswordIcon = !!control.showPasswordIcon;
+    control.showPasswordIcon = !control.showPasswordIcon;
   }
 
   preventDefault() {

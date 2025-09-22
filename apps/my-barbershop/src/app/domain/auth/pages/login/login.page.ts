@@ -13,7 +13,7 @@ import { iDynamicFormConfig } from '@widget/components/dynamic-form/dynamic-form
 import { DynamicFormComponent } from '@widget/components/dynamic-form/dynamic-form.component';
 
 @Component({
-  selector: 'mb-login',
+  selector: 'app-login',
   imports: [DynamicFormComponent, NzButtonComponent, NzFormModule, NzInputModule, ReactiveFormsModule, TranslocoModule, RouterModule],
   templateUrl: './login.page.html',
   styleUrl: './login.page.scss',

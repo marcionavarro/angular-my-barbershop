@@ -1,0 +1,29 @@
+.app-switch {
+  background: #fafafa;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 1rem;
+  gap: 0.5rem;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+
+  .avatar-uploader {
+    position: relative;
+    display: inline-block;
+
+    button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .ant-radio-wrapper {
+    margin: 0.25rem 0;
+  }
+}
